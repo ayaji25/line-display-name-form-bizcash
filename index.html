@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,8 @@
       liff.getProfile().then(profile => {
         const userId = liff.getDecodedIDToken().sub;
         const displayName = profile.displayName;
-        const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfAG-MrM54y_thuBG9qT-Aj1Gi33MzZIEj0VYfI-esVVr51aw/formResponse?entry.2111505363=" + encodeURIComponent(displayName);
+        const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdhJQSyoQ1dokI0M4HMgePVnptkLPNfLCT6sFFUmTijtd9I0A/formResponse?entry.1491486634=" + encodeURIComponent(userId)
+                        + "&entry.750163769=" + encodeURIComponent(displayName);
         window.location.href = formUrl;
       }).catch(err => {
         document.body.innerHTML = "<h3>エラーが発生しました：" + err + "</h3>";
@@ -26,7 +28,7 @@
     }
 
     window.onload = function () {
-      liff.init({ liffId: "2007666541-32KbVGne" })
+      liff.init({ liffId: "2007008877-X3B245Zd" })
         .then(() => {
           if (!liff.isLoggedIn()) {
             liff.login();
