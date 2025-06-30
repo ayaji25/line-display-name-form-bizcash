@@ -2,22 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-578X1SMY51"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-578X1SMY51');
-  </script>
-
   <meta charset="UTF-8">
   <title>Redirecting to Google Form</title>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
     function runApp() {
       liff.getProfile().then(profile => {
-        const userId = liff.getDecodedIDToken().sub;
         const displayName = profile.displayName;
         const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfAG-MrM54y_thuBG9qT-Aj1Gi33MzZIEj0VYfI-esVVr51aw/formResponse?entry.2111505363=" + encodeURIComponent(displayName);
         window.location.href = formUrl;
